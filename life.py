@@ -6,7 +6,12 @@ def main():
     (width, height) = get_term_size()
     grid = [(width-5)*[0] for i in range(height-5)]
 
-
+    # Make initial grid be Conway's R-pentomino
+    grid[len(grid)/2 - 1][len(grid[0])/2] = 1
+    grid[len(grid)/2 + 0][len(grid[0])/2] = 1
+    grid[len(grid)/2 + 1][len(grid[0])/2] = 1
+    grid[len(grid)/2 - 1][len(grid[0])/2 + 1] = 1
+    grid[len(grid)/2 + 0][len(grid[0])/2 - 1] = 1
     # Draw initial grid
     update_screen(grid)
 
